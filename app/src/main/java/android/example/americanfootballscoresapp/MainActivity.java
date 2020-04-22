@@ -2,26 +2,32 @@ package android.example.americanfootballscoresapp;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     //Tracks the score for Team A
-    int scoreTeamA = 0;
+    private int scoreTeamA = 0;
     //Tracks the score for Team B
-    int scoreTeamB = 0;
+    private int scoreTeamB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
     }
 
     //Displays the given score for Team A.
     public void displayForTeamA(int score) {
         TextView scoreView = findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
+
+
+
     }
 
     //Displays the given score for Team B.
