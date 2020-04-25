@@ -6,18 +6,24 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 public class MainActivity extends AppCompatActivity {
     //Tracks the score for Team A
-    private int scoreTeamA = 0;
+   /// private int scoreTeamA = 0;
     //Tracks the score for Team B
-    private int scoreTeamB = 0;
+  ///  private int scoreTeamB = 0;
+    ScoreViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mViewModel = ViewModelProviders.of(this).get(ScoreViewModel.class);
+        // Other setup code below...
+        displayForTeamA(mViewModel.scoreTeamA);
+        displayForTeamB(mViewModel.scoreTeamB);
 
     }
 
@@ -25,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
     public void displayForTeamA(int score) {
         TextView scoreView = findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
-
-
-
     }
 
     //Displays the given score for Team B.
@@ -38,57 +41,66 @@ public class MainActivity extends AppCompatActivity {
 
     // Increase Team A score by 6
     public void addSixForTeamA(View view) {
-        scoreTeamA = scoreTeamA + 6;
-        displayForTeamA(scoreTeamA);
+
+        mViewModel.scoreTeamA = mViewModel.scoreTeamA + 6;
+        displayForTeamA(mViewModel.scoreTeamA);
     }
 
     // Increase Team A score by 3
     public void addThreeForTeamA(View view) {
-        scoreTeamA = scoreTeamA + 3;
-        displayForTeamA(scoreTeamA);
+        mViewModel.scoreTeamA = mViewModel.scoreTeamA + 3;
+        displayForTeamA(mViewModel.scoreTeamA);
     }
 
     //Increase Team A score by 2
     public void addTwoForTeamA(View view) {
-        scoreTeamA = scoreTeamA + 2;
-        displayForTeamA(scoreTeamA);
+        mViewModel.scoreTeamA = mViewModel.scoreTeamA + 2;
+        displayForTeamA(mViewModel.scoreTeamA);
+    }
+
+    // An example of both reading and writing to the ViewModel
+    public void addOneForTeamA(View v) {
+        mViewModel.scoreTeamA = mViewModel.scoreTeamA + 1;
+        displayForTeamA(mViewModel.scoreTeamA);
+
     }
 
     //Increase Team A score by 1
-    public void addOneForTeamA(View view) {
+    /*public void addOneForTeamA(View view) {
         scoreTeamA = scoreTeamA + 1;
         displayForTeamA(scoreTeamA);
-    }
+    }*/
 
     // Increase Team B score by 3
     public void addSixForTeamB(View view) {
-        scoreTeamB = scoreTeamB + 6;
-        displayForTeamB(scoreTeamB);
+
+        mViewModel.scoreTeamB = mViewModel.scoreTeamB + 6;
+        displayForTeamB(mViewModel.scoreTeamB);
     }
 
     // Increase Team B score by 3
     public void addThreeForTeamB(View view) {
-        scoreTeamB = scoreTeamB + 3;
-        displayForTeamB(scoreTeamB);
+        mViewModel.scoreTeamB = mViewModel.scoreTeamB + 3;
+        displayForTeamB(mViewModel.scoreTeamB);
     }
 
     //Increase Team B score by 2
     public void addTwoForTeamB(View view) {
-        scoreTeamB = scoreTeamB + 2;
-        displayForTeamB(scoreTeamB);
+        mViewModel.scoreTeamB = mViewModel.scoreTeamB + 2;
+        displayForTeamB(mViewModel.scoreTeamB);
     }
 
     //Increase Team B score by 1
     public void addOneForTeamB(View view) {
-        scoreTeamB = scoreTeamB + 1;
-        displayForTeamB(scoreTeamB);
+        mViewModel.scoreTeamB = mViewModel.scoreTeamB + 1;
+        displayForTeamB(mViewModel.scoreTeamB);
     }
 
     //Reset both Team score points
     public void resetScore(View v) {
-        scoreTeamA = 0;
-        scoreTeamB = 0;
-        displayForTeamA(scoreTeamA);
-        displayForTeamB(scoreTeamB);
+        mViewModel.scoreTeamA = 0;
+        mViewModel.scoreTeamB = 0;
+        displayForTeamA(mViewModel.scoreTeamA);
+        displayForTeamB(mViewModel.scoreTeamB);
     }
 }
