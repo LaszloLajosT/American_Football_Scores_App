@@ -26,3 +26,6 @@ In either case, you will need to select a sport or game to track. Importantly, y
 * American Football Scores App: Add a button for each of the 4 amounts of points a team can score in american football.
 * Football Scores app: Track both points and fouls
 
+Portrait             |  Landscape
+:-------------------------:|:-------------------------:
+<img src="screenshots/screenshot1.png" width="394" height="552" />| <img src="screenshots/screenshot2.png" width="552" height="394" />
