@@ -18,7 +18,7 @@ This project is about combining various ideas and skills we’ve been practicing
 * Finding views by their ID
 
 ## Build Your Project
-To complete this project, you will need to build a Score Keeper app. You can either start from scratch, or customize the Court Counter app you made as part of Practice set 2.
+To complete this project, you will need to build a Score Keeper app.
 
 In either case, you will need to select a sport or game to track. Importantly, you'll need to select a sport with either multiple ways to score points or multiple metrics to track. If you have trouble choosing, here are some suggestions:
 
