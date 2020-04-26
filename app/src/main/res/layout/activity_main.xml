@@ -2,16 +2,19 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:layout_height="match_parent" >
+    <!-- android:fillViewport="true" -->
 
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/view_test"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2">
 
@@ -29,7 +32,8 @@
                     android:layout_gravity="center"
                     android:padding="16dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/atlanta_falcons" />
+                    android:src="@drawable/atlanta_falcons"
+                    android:contentDescription="@string/sample_teama_description" />
 
                 <TextView
                     android:id="@+id/team_a_score"
@@ -38,45 +42,50 @@
                     android:layout_gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="24dp"
-                    android:text="0"
+                    android:text="@string/sample_point"
                     android:textColor="#000000"
                     android:textSize="56sp" />
 
                 <Button
+                    android:id="@+id/team_a_six"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:tag="teamAPlus6"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:layout_marginBottom="8dp"
                     android:onClick="addSixForTeamA"
-                    android:text="+6 Points" />
+                    android:text="@string/sample_add_6_points" />
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:tag="teamAPlus3"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:layout_marginBottom="8dp"
                     android:onClick="addThreeForTeamA"
-                    android:text="+3 Points" />
+                    android:text="@string/sample_add_3_points" />
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:tag="teamAPlus2"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:layout_marginBottom="8dp"
                     android:onClick="addTwoForTeamA"
-                    android:text="+2 Points" />
+                    android:text="@string/sample_add_2_points" />
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:tag="teamAPlus1"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:layout_marginBottom="8dp"
                     android:onClick="addOneForTeamA"
-                    android:text="+1 Point" />
+                    android:text="@string/sample_add_1_point" />
 
             </LinearLayout>
 
@@ -100,7 +109,8 @@
                     android:layout_gravity="center"
                     android:padding="16dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/carolina_panthers" />
+                    android:src="@drawable/carolina_panthers"
+                    android:contentDescription="@string/sample_teamb_description" />
 
                 <TextView
                     android:id="@+id/team_b_score"
@@ -109,45 +119,50 @@
                     android:layout_gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="24dp"
-                    android:text="0"
+                    android:text="@string/sample_point"
                     android:textColor="#000000"
                     android:textSize="56sp" />
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:tag="teamBPlus6"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:layout_marginBottom="8dp"
                     android:onClick="addSixForTeamB"
-                    android:text="+6 Points" />
+                    android:text="@string/sample_add_6_points" />
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:tag="teamBPlus3"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:layout_marginBottom="8dp"
                     android:onClick="addThreeForTeamB"
-                    android:text="+3 Points" />
+                    android:text="@string/sample_add_3_points" />
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:tag="teamBPlus2"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:layout_marginBottom="8dp"
                     android:onClick="addTwoForTeamB"
-                    android:text="+2 Points" />
+                    android:text="@string/sample_add_2_points" />
 
                 <Button
+                    android:id="@+id/valami"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:tag="teamBPlus1"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:layout_marginBottom="8dp"
                     android:onClick="addOneForTeamB"
-                    android:text="+1 Point" />
+                    android:text="@string/sample_add_1_point" />
 
             </LinearLayout>
         </LinearLayout>
@@ -155,11 +170,10 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
             android:layout_marginBottom="36dp"
             android:onClick="resetScore"
-            android:text="Reset" />
+            android:text="@string/reset_button" />
 
-    </RelativeLayout>
+    </LinearLayout>
 </ScrollView>
