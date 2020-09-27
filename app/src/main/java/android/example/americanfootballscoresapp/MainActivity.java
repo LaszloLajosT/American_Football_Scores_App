@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //ViewModelProviders is deprecated
-        // mViewModel = ViewModelProviders.of(this).get(ScoreViewModel.class);
 
         //use this instead of ViewModelProviders
         mViewModel = new ViewModelProvider(this).get(ScoreViewModel.class);
@@ -32,16 +30,12 @@ public class MainActivity extends AppCompatActivity {
     public void displayForTeamA(int score) {
         TextView scoreView = findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
-        //Used this before ViewModel
-        //scoreView.setText(String.valueOf(score));
     }
 
     //Displays the given score for Team B.
     public void displayForTeamB(int score) {
         TextView scoreView = findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
-        //Used this before ViewModel
-        //scoreView.setText(String.valueOf(score));
     }
 
     // Increase Team A score by 6
@@ -67,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         mViewModel.setScoreTeamA(mViewModel.getScoreTeamA()+1);
         displayForTeamA(mViewModel.getScoreTeamA());
     }
-
 
     // Increase Team B score by 6
     public void addSixForTeamB(View view) {
