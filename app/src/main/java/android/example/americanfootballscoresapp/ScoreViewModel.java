@@ -25,5 +25,4 @@ public class ScoreViewModel extends ViewModel {
     public void setScoreTeamB(int scoreTeamB) {
         this.scoreTeamB = scoreTeamB;
     }
-
 }
